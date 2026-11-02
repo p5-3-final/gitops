@@ -27,7 +27,7 @@ gitops/
 │   └── projects/         # AppProject: platform, 환경별
 │                         # (argocd/ 바로 아래에 platform·envs용 ApplicationSet을 둔다)
 ├── platform/<addon>/     # 클러스터 공통 애드온: Helm chart 버전 + values
-├── apps/<service>/base/  # 서비스 공통 매니페스트 (환경과 무관)
+├── apps/<service>/base/  # 서비스 공통 매니페스트 (환경과 무관). 서비스 목록은 docs의 service-catalog.md와 같다
 ├── envs/
 │   ├── _template/        # 새 환경을 만들 때 복사한다
 │   └── dev/              # 환경별 차이: namespace, 이미지 태그, replica, 리소스, 호스트
