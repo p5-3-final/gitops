@@ -24,7 +24,7 @@ globs: "bootstrap/**, argocd/**, platform/**, apps/**, envs/**"
 ## Argo CD
 - Application을 손으로 하나씩 만들지 않는다. `platform/*`와 `envs/*`는 ApplicationSet이 폴더를 보고 생성한다.
 - 모든 Application은 AppProject에 속하고, AppProject는 허용 namespace와 소스 레포를 제한한다.
-- sync 정책: `automated`(`prune: true`, `selfHeal: true`)를 기본으로 한다. 운영 성격의 환경을 추가하면 그 환경의 변경 PR에 사람 승인을 필수로 둔다.
+- sync 정책: `automated`(`prune: true`, `selfHeal: true`)를 기본으로 한다. 운영 성격의 환경 변경도 필수 검사와 GitHub 머지 조건을 충족하면 별도 팀원 Approve 대기 없이 직접 머지한다. 인프라 실행 승인은 유지한다.
 
 ## 검증
 - 변경한 뒤에는 바뀐 환경마다 yamllint, kubeconform(CRD 스키마 카탈로그 포함), kube-linter 결과를 보고한다. 명령은 AGENTS.md의 "명령어"를 따른다.
